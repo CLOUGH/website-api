@@ -1,0 +1,26 @@
+{
+  "name": "website-api",
+  "version": "1.0.0",
+  "description": "The api backend for my website",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CLOUGH/website-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CLOUGH/website-api/issues"
+  },
+  "homepage": "https://github.com/CLOUGH/website-api#readme",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.0"
+  },
+  "devDependencies": {
+    "@types/mongoose": "^4.7.23"
+  }
+}
