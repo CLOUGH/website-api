@@ -17,8 +17,8 @@ let PageSchema = new Schema({
             type: String,
             required: false
         },
-        messages: {
-            type: [String],
+        message: {
+            type: String,
             required: false,
         },
         imageUrl: {
