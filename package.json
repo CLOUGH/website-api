@@ -18,7 +18,8 @@
   "homepage": "https://github.com/CLOUGH/website-api#readme",
   "dependencies": {
     "cors": "^2.8.4",
-    "express": "^4.16.0"
+    "express": "^4.16.0",
+    "mongoose": "^4.12.1"
   },
   "devDependencies": {
     "@types/mongoose": "^4.7.23"
