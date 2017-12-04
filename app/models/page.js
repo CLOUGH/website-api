@@ -8,12 +8,12 @@ let PageSchema = new Schema({
         type: String,
         index: { unique: true }
     },
-    header: new Schema({
+    heading: new Schema({
         type: {
             type: String,
             required: true
         },
-        heading: {
+        title: {
             type: String,
             required: false
         },
@@ -29,6 +29,8 @@ let PageSchema = new Schema({
     content: new Schema({
 
     }, { strict: false }),
+
+    sections: [],
     created: {
         type: Date,
         default: Date.now
@@ -38,5 +40,23 @@ let PageSchema = new Schema({
         default: Date.now,
     }
 });
+
+PageSchema.pre('save', function (next) {
+    var self = this;
+
+    if (self.homePage == true) {
+        this.model('Page').update({ homePage: true, _id: { $ne: this._id } }, { homePage: false }, { multi: true })
+            .then(function () {
+                console.log('Changed existing home page to not be home page')
+                next();
+            }, function () {
+                console.error('An error has ocurred while trying to change the previous active')
+                next();
+            })
+    }
+    else {
+        next();
+    }
+})
 
 module.exports = mongoose.model('Page', PageSchema);

@@ -65,7 +65,7 @@ router.route('/pages/:page_id')
     .put(function(req, res) {        
         // use our page model to find the page we want
         Page.findById(req.params.page_id).then(function(page) {
-            page.name = req.body.name;  // update the pages info
+            Object.assign(page, req.body);
 
             // save the page
             page.save().then(function(page) {
