@@ -3,9 +3,16 @@ const Schema = mongoose.Schema;
 
 
 const postSchema = new Schema({
-  title: { type: String, required: true },
-  body: { type: String }
+  title: {
+    type: String,
+    required: true
+  },
+  content: String,
+  status: String,
+  excerpt: String
+}, {
+  timestamps: true
 });
 
 
-module.exports =  postSchema;
+module.exports = postSchema;
