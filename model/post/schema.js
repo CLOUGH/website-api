@@ -9,7 +9,8 @@ const postSchema = new Schema({
   },
   content: String,
   status: String,
-  excerpt: String
+  excerpt: String,
+  featuredImage: String
 }, {
   timestamps: true
 });

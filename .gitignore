@@ -45,3 +45,6 @@ jspm_packages
 
 public/uploads/*
 !public/uploads/.gitkeep
+
+ssl/*
+!ssl/.gitkeep
