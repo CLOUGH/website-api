@@ -4,6 +4,11 @@ const config = {
     port: process.env.PORT || 3000,
     httpsPort: process.env.HTTPS_PORT || 8443
   },
+  ssl: {
+    key: process.env.SSL_KEY || 'ssl/key.pem',
+    chain: process.env.SSL_CHAIN || 'ssl/chain.pem',
+    cert: process.env.SSL_CERT || 'ssl/cert.pem'
+  },
   mongo: {
     url: process.env.MONGO_DB_URI || 'mongodb://localhost/website-api'
   }

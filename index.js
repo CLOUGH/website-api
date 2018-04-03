@@ -30,9 +30,9 @@ app.use('/', routes);
 
 // https
 const credentials = {
-  key: fs.readFileSync('ssl/key.pem'),
-  ca: fs.readFileSync('ssl/chain.pem'),
-  cert: fs.readFileSync('ssl/cert.pem')
+  key: fs.readFileSync(config.ssl.key),
+  ca: fs.readFileSync(config.ssl.chain),
+  cert: fs.readFileSync(config.ssl.cert)
 };
 
 https.createServer(credentials, app).listen(config.server.httpsPort, () => {
