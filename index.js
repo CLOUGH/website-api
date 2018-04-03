@@ -31,7 +31,7 @@ app.use('/', routes);
 // https
 const credentials = {
   key: fs.readFileSync('ssl/key.pem'),
-  ca: fs.readFileSync('ssl/csr.pem'),
+  ca: fs.readFileSync('ssl/chain.pem'),
   cert: fs.readFileSync('ssl/cert.pem')
 };
 
