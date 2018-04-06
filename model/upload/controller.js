@@ -35,8 +35,13 @@ class UploadController extends Controller {
         });
       }
 
+      const file = files[Object.keys(files)[0]];
+
       res.status(200).json({
-        link: files.file.link
+        uploaded: 1,
+        fileName: file.name,
+        url: file.link,
+        size: file.size
       });
     });
 

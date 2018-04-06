@@ -1,10 +1,8 @@
 const path = require('path');
 require('dotenv').config({
-  path: path.join(__dirname, ".env")
+  path: path.join(__dirname, '.env')
 });
 
-
-console.log(process.env.SSL_KEY);
 const config = {
   environment: process.env.NODE_ENV || 'dev',
   server: {
