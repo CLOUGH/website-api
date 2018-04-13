@@ -1,12 +1,13 @@
 const controller = require('./controller');
 const Router = require('express').Router;
 const router = new Router();
+const authenticated = require('../../middlewares/authenticated');
 
 router.route('/')
-  .post((...args) => controller.upload(...args));
+  .post(authenticated, (...args) => controller.upload(...args));
 
 router.route('/:fileName')
-  .delete((...args) => controller.delete(...args))
+  .delete(authenticated, (...args) => controller.delete(...args))
   .get((...args) => controller.getFile(...args));
 
 module.exports = router;

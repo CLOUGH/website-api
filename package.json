@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "seed": "node seeder.js"
   },
   "engines": {
     "node": ">=6"
   },
   "author": "Warren Clough <clough.warren@gmail.com>",
   "dependencies": {
+    "bcrypt": "^2.0.0",
     "bluebird": "^3.4.6",
     "body-parser": "^1.15.2",
     "cors": "^2.8.4",
@@ -20,9 +22,10 @@
     "express-jwt": "^5.3.1",
     "formidable": "^1.2.1",
     "helmet": "^3.1.0",
-    "jsonwebtoken": "^8.2.0",
+    "jsonwebtoken": "^8.2.1",
     "jwks-rsa": "^1.2.1",
     "mongoose": "^4.7.0",
+    "mongoose-seed": "^0.4.1",
     "morgan": "^1.7.0",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",

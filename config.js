@@ -1,5 +1,7 @@
 const path = require('path');
-require('dotenv').config({
+const env = require('dotenv');
+
+env.config({
   path: path.join(__dirname, '.env')
 });
 
@@ -10,12 +12,16 @@ const config = {
     httpsPort: process.env.HTTPS_PORT || 8443
   },
   ssl: {
-    key: process.env.SSL_KEY || 'ssl/key.pem',
-    chain: process.env.SSL_CHAIN || 'ssl/chain.pem',
-    cert: process.env.SSL_CERT || 'ssl/cert.pem'
+    key: process.env.SSL_KEY,
+    chain: process.env.SSL_CHAIN,
+    cert: process.env.SSL_CERT,
+    enabled: process.env.SSL_ENABLED || false
   },
   mongo: {
     url: process.env.MONGO_DB_URI || 'mongodb://localhost/website-api'
+  },
+  jwt: {
+    secret: process.env.JWT_SECRET
   }
 };
 

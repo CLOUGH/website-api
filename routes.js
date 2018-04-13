@@ -2,11 +2,11 @@ const Router = require('express').Router;
 const router = new Router();
 
 
-const page = require('./model/page/router');
-const homepage = require('./model/homepage/router');
-const post = require('./model/post/router');
-const user = require('./model/user/router');
-const upload = require('./model/upload/router');
+const page = require('./api/page/router');
+const post = require('./api/post/router');
+const user = require('./api/user/router');
+const upload = require('./api/upload/router');
+const auth = require('./api/auth/router');
 
 router.get('/', (req, res) => {
   res.json({
@@ -15,9 +15,9 @@ router.get('/', (req, res) => {
 });
 
 router.use('/page', page);
-router.use('/homepage', homepage);
 router.use('/posts', post);
 router.use('/users', user);
 router.use('/upload', upload);
+router.use('/auth', auth);
 
 module.exports = router;
