@@ -23,7 +23,9 @@ class AuthController extends Controller {
           return next(err);
         }
         // generate a signed son web token with the contents of user object and return it in the response
-        const token = jwt.sign(this.getPayload(user), config.jwt.secret);
+        const token = jwt.sign(this.getPayload(user), config.jwt.secret, {
+          expiresIn: '1h'
+        });
 
         return res.json({
           token
