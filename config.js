@@ -5,6 +5,7 @@ env.config({
   path: path.join(__dirname, '.env')
 });
 
+
 const config = {
   environment: process.env.NODE_ENV || 'dev',
   server: {
@@ -22,6 +23,12 @@ const config = {
   },
   jwt: {
     secret: process.env.JWT_SECRET
+  },
+  google: {
+    keyFile: process.env.GOOGLE_KEY_FILE,
+    analytics: {
+      viewId: process.env.GOOGLE_ANALYTICS_VIEW_ID
+    }
   }
 };
 

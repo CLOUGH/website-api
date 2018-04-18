@@ -50,3 +50,4 @@ ssl/*
 !ssl/.gitkeep
 
 .env
+key.json

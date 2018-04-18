@@ -7,6 +7,7 @@ const post = require('./api/post/router');
 const user = require('./api/user/router');
 const upload = require('./api/upload/router');
 const auth = require('./api/auth/router');
+const googleAnalytics = require('./api/google-analytics/router');
 
 router.get('/', (req, res) => {
   res.json({
@@ -19,5 +20,6 @@ router.use('/posts', post);
 router.use('/users', user);
 router.use('/upload', upload);
 router.use('/auth', auth);
+router.use('/google-analytics', googleAnalytics);
 
 module.exports = router;
