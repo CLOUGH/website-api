@@ -22,6 +22,8 @@ class GoogleAnalyticsController extends Controller {
         }],
         metrics: [{
           expression: 'ga:users'
+        }, {
+          expression: 'ga:newUsers'
         }],
         dimensions: [{
           name: 'ga:date'
@@ -29,6 +31,88 @@ class GoogleAnalyticsController extends Controller {
         includeEmptyRows: true
       }]
     };
+
+
+    this.getBatch(resource)
+      .then(data => {
+        res.json(data);
+      })
+      .catch(err => {
+        res.send(err);
+      });
+  }
+
+  getUserGeolocation(req, res, next) {
+    const resource = {
+      reportRequests: [{
+        viewId: this.viewId,
+        dateRanges: [{
+          startDate: '30daysAgo',
+          endDate: 'today'
+        }],
+        dimensions: [{
+          name: 'ga:country'
+        }],
+        metrics: [{
+          expression: 'ga:users'
+        }]
+      }]
+    };
+    this.getBatch(resource)
+      .then(data => {
+        res.json(data);
+      })
+      .catch(err => {
+        res.send(err);
+      });
+  }
+
+  pageViews(req, res, next) {
+    const resource = {
+      reportRequests: [{
+        viewId: this.viewId,
+        dateRanges: [{
+          startDate: '30daysAgo',
+          endDate: 'today'
+        }],
+        dimensions: [{
+          name: 'ga:pagePath'
+        }],
+        metrics: [{
+          expression: 'ga:pageviews'
+        }],
+        includeEmptyRows: true
+      }]
+    };
+
+
+    this.getBatch(resource)
+      .then(data => {
+        res.json(data);
+      })
+      .catch(err => {
+        res.send(err);
+      });
+  }
+
+  pageViewsPerDay(req, res, next) {
+    const resource = {
+      reportRequests: [{
+        viewId: this.viewId,
+        dateRanges: [{
+          startDate: '30daysAgo',
+          endDate: 'today'
+        }],
+        dimensions: [{
+          name: 'ga:date'
+        }],
+        metrics: [{
+          expression: 'ga:pageviews'
+        }],
+        includeEmptyRows: true
+      }]
+    };
+
 
     this.getBatch(resource)
       .then(data => {
