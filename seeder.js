@@ -1,8 +1,8 @@
-const mongoose = require('mongoose');
-const bluebird = require('bluebird');
-const config = require('./config');
+// const mongoose = require('mongoose');
+// const bluebird = require('bluebird');
+// const config = require('./config');
 
-mongoose.Promise = bluebird;
-mongoose.connect(config.mongo.url);
+// mongoose.Promise = bluebird;
+// mongoose.connect(config.mongo.url);
 
-require('./api/user/seeder');
+// require('./api/user/seeder');

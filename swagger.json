@@ -1,0 +1,13 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Website API",
+    "description": "API for my website",
+    "version": "1.0.0"
+  },
+  "produces": [
+    "application/json"
+  ],
+  "host": "localhost:3000",
+  "paths": {}
+}
